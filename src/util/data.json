@@ -1,0 +1,10 @@
+{
+  "endpoint": "https://api.github.com",
+  "cdn": "https://raw.githubusercontent.com",
+  "user": "exoRift",
+  "pinned": [
+    "cyclone-engine",
+    "telex",
+    "RFID-S"
+  ]
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Email",
+    "value": "arthurbneuman@gmail.com",
+    "link": "mailto:arthurbneuman@gmail.com",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/New_Logo_Gmail.svg/256px-New_Logo_Gmail.svg.png"
+  },
+  {
+    "name": "Discord",
+    "value": "exoRift#9275",
+    "icon": "https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png"
+  },
+  {
+    "name": "Github",
+    "value": "exoRift",
+    "link": "https://github.com/exoRift",
+    "icon": "https://image.flaticon.com/icons/svg/25/25231.svg"
+  },
+  {
+    "name": "Twitter",
+    "value": "xoRift",
+    "link": "https://twitter.com/xoRift",
+    "icon": "https://3.bp.blogspot.com/-NxouMmz2bOY/T8_ac97cesI/AAAAAAAAGg0/e3vY1_bdnbE/s1600/Twitter+logo+2012.png"
+  }
+]

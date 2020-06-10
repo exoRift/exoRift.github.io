@@ -1,3 +1,8 @@
+:root {
+  --offset-bg: #23272a;
+  --offset-theme: #007053;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +15,61 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#navbar {
+  transition: .5s;
+  width: 100%;
+  height: 100%;
+  margin: 1% 0 .5% 0;
+  top: 0;
+  position: sticky;
+  z-index: 10;
+}
+#navbar[scrolled='true'] {
+  margin: 0;
+}
+
+#navbar .banner {
+  transition: .5s;
+  width: 100%;
+  text-align: center;
+  padding: 1%;
+  background-position: 50% 0% !important;
+  background-size: 120% !important;
+}
+#navbar[scrolled='true'] .banner {
+  background-position: 50% 25% !important;
+  background-size: 100% !important;
+}
+
+#navbar #header {
+  transition: .4s;
+  font-size: 5rem;
+}
+#navbar[scrolled='true'] #header {
+  font-size: 0rem;
+  transform: scaleY(0);
+}
+
+#navbar .nav-btn-container {
+  display: flex;
+  justify-content: center;
+}
+#navbar .nav-btn {
+  transition: .5s;
+  width: 5%;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 10px;
+  margin: 0 .5%;
+  padding: .3%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+#navbar .nav-btn:hover {
+  background: rgba(0, 0, 0, .7);
+  text-decoration: none;
+}
+#navbar .nav-btn.active {
+  background: rgba(0, 0, 0, .8);
 }
