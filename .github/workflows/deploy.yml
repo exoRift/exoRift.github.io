@@ -1,0 +1,50 @@
+name: Deploy Site
+
+on: 
+  push:
+    branches:
+      - ready
+
+jobs:
+  build:
+    name: Build and Deploy site
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache Dependencies
+        uses: actions/cache@v1.1.2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ matrix.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install Dependencies
+        run: npm i
+      - name: Define package data
+        id: define_pkg
+        run: |
+          content=`cat package.json`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}" 
+          echo "::set-output name=package::$content"
+      - name: Build Resources
+        run: npm run build
+      - name: Deploy Site
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: master
+          FOLDER: build
+          GIT_CONFIG_NAME: Site Deployer
+          COMMIT_MESSAGE: Update Site for version '${{ fromJson(steps.define_pkg.outputs.package).version }}'
