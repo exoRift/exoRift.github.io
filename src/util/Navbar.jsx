@@ -4,7 +4,7 @@ import {
   useLocation
 } from 'react-router-dom'
 
-import splash from '../assets/splash.png'
+import splash from '../assets/Splash.png'
 
 import routes from './routes.js'
 
