@@ -8,7 +8,8 @@
   {
     "name": "Discord",
     "value": "exoRift#9275",
-    "icon": "https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png"
+    "link": "https://discord.gg/DjYykuz",
+    "icon": "https://freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png"
   },
   {
     "name": "Github",
@@ -21,5 +22,11 @@
     "value": "xoRift",
     "link": "https://twitter.com/xoRift",
     "icon": "https://3.bp.blogspot.com/-NxouMmz2bOY/T8_ac97cesI/AAAAAAAAGg0/e3vY1_bdnbE/s1600/Twitter+logo+2012.png"
+  },
+  {
+    "name": "DeviantArt",
+    "value": "exoRift",
+    "link": "https://deviantart.com/exorift",
+    "icon": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/281fb36e-8f3c-4fd2-9c83-1146281395c4/d8vzqbo-a1a03cab-ccca-4efc-8a80-4193bb76af9a.png/v1/fill/w_668,h_1101,strp/deviantart_logo_by_cr8gr8_designs_d8vzqbo-fullview.png"
   }
 ]

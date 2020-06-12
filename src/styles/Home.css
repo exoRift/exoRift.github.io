@@ -2,34 +2,6 @@
   display: flex;
 }
 
-.scroller {
-  transition: width .3s;
-  background: var(--offset-bg);
-  border-radius: 0 25px 25px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 6%;
-}
-.scroller:hover {
-  width: 11%;
-}
-
-.scroller .scroll {
-  background: rgba(0, 0, 0, .3);
-  margin: 10% 0 10% 0;
-  padding-left: 2%;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
-.scroller .scroll:hover {
-  color: var(--green);
-}
-.scroller .scroll[active='true'] {
-  animation: clicked .3s ease-in-out 0s 2 alternate forwards;
-}
-
 .section-container {
   width: 100%;
 }
@@ -37,19 +9,37 @@
 .section {
   background: rgba(0, 0, 0, .2);
   border-radius: 20px;
-  width: auto;
-  margin: 0 .5% 1% .5%;
+  margin: 0 .5% 1%;
   padding: 1%;
+}
+
+.featured {
+  display: flex;
+  justify-content: space-evenly;
+}
+.featured .card {
+  transition: .3s;
+  height: 20vh;
+  padding: 0 2%;
+  box-shadow: -10px 10px 2px rgba(0, 0, 0, .3);
+}
+.featured .card:hover {
+  transform: translate(7px, -7px);
+  box-shadow: -15px 15px 2px rgba(0, 0, 0, .3);
+}
+.featured .card img {
+  width: 20vw;
+  margin: auto 0;
 }
 
 .contact-container {
   margin: 3% auto 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr .5fr;
   grid-template-rows: 1fr 1fr;
   row-gap: 5%;
   column-gap: 3%;
-  padding: 0 25% 1% 25%;
+  padding: 0 25% 1%;
 }
 .contact {
   transition: .3s;
@@ -62,39 +52,23 @@
 .contact:hover {
   background: rgba(0, 0, 0, .4);
   transform: translateY(-6%);
+  text-decoration: none;
 }
 .contact img {
-  width: 75px;
-  margin-right: 1%;
+  width: 4vw;
+  margin-right: 5%;
 }
 .contact .title {
   display: flex;
   margin-bottom: 1%;
+  font-size: 2rem;
 }
 
-.featured {
-  display: flex;
-  justify-content: space-evenly;
+.contact.DeviantArt {
+  grid-area: 1 / 3 / span 2 / 3;
+  padding-top: 35%;
+  padding-left: 5%;
 }
-.featured .card {
-  transition: .3s;
-  height: 200px;
-  padding: 0 2% 0 2%;
-  box-shadow: -10px 10px 2px rgba(0, 0, 0, .3);
-}
-.featured .card:hover {
-  transform: translate(7px, -7px);
-  box-shadow: -15px 15px 2px rgba(0, 0, 0, .3);
-}
-.featured .card img {
-  width: 400px;
-  margin: auto 0 auto 0;
-}
-
-@keyframes clicked {
-  from {
-    color: var(--green);
-  } to {
-    color: var(--offset-theme);
-  }
+.contact.DeviantArt .title span {
+  transform: rotate(90deg) translate(12%, 73%);
 }

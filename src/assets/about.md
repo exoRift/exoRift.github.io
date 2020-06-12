@@ -1,27 +1,25 @@
-Hi, my name is Arthur. I'm a software engineer (*professional spaghetti cook*) currently looking to expand my projects list to use on my resume/portfolio for future job applications.
+Hello, my name is Arthur and I am 15 years old. I am an aspiring software engineer living in New York currently looking to expand my projects list to use on my resume/portfolio for future job applications.
 
-I'm 15 years old and live in New York
+I have been programming for over 5 years and have released several open-source projects for use in both consumer and development spaces.
 
-### I'm capable of
+I am interested in both web and game design, though my primary experience has been in web design.
+
+### Capabilities
 - Product design
-- Code
+- Product code
 - Logo design
 - Banner design
-- Art
-- Etc.
+- Artwork
 
-### I've also had experience with
-- Web
+### Experience
+- Web development
 - Backend (APIs, Databases)
 - Frontend (HTML, CSS, JS, React)
 - Middleware (Database managers)
-- Servers
+- Server development
 
-### And I'm skilled/have worked with with
-- NodeJS
-- JS
+### Fluent Languages
+- JS (Web, NodeJS)
 - HTML, CSS
 - SQL
 - C++
-- Java
-- C#

@@ -1,6 +1,8 @@
 import React from 'react'
 import Markdown from 'react-markdown'
 
+import Scroller from './util/Scroller.jsx'
+
 import './styles/Home.css'
 
 import data from './util/data.json'
@@ -12,26 +14,8 @@ class Home extends React.Component {
     super(props)
 
     this.state = {
-      // pinned: [],
-      activeScroller: 'pins',
       aboutContent: ''
     }
-  }
-
-  componentDidMount () {
-    // for (const repo of data.pinned) {
-    //   fetch(`${data.endpoint}/repos/${data.user}/${repo}`)
-    //     .then((res) => res.json())
-    //     .then((json) => this.setState({
-    //       pinned: [...this.state.pinned, json]
-    //     }))
-    // }
-
-    fetch(about)
-      .then((res) => res.text())
-      .then((aboutContent) => this.setState({
-        aboutContent
-      }))
   }
 
   render () {
@@ -43,7 +27,7 @@ class Home extends React.Component {
           <>
             <div className='featured'>
               {data.pinned.map((p, i) => (
-                <a className='card' href={'/projects/' + p} key={i}>
+                <a className='card' href={'/projects#' + p} key={i}>
                   <img alt={p} src={`${data.cdn}/${data.user}/${p}/master/assets/Splash.png`}/>
                 </a>
               ))}
@@ -73,14 +57,14 @@ class Home extends React.Component {
 
             <div className='contact-container'>
               {contacts.map((c, i) => (
-                <div className='contact' key={i}>
+                <a href={c.link} className={'contact ' + c.name} key={i}>
                   <div className='title'>
                     <img alt={c.name} src={c.icon}/>
-                    <h3>{c.name}</h3>
+                    <span>{c.name}</span>
                   </div>
 
-                  <a href={c.link}>{c.value}</a>
-                </div>
+                  <span className='value'>{c.value}</span>
+                </a>
               ))}
             </div>
           </>
@@ -90,13 +74,12 @@ class Home extends React.Component {
 
     return (
       <div className='homepage'>
-        <div className='scroller'>
-          {sections.map((s, i) => (
-            <div className='scroll' key={i} active={this.state.activeScroller === s.short ? 'true' : 'false'} onClick={() => clickFunction(s, this)}>
-              <span>{s.name}</span>
-            </div>
-          ))}
-        </div>
+        <Scroller doms={sections.map((s) => {
+          return {
+            ...s,
+            short: 'section ' + s.short
+          }
+        })}/>
 
         <div className='section-container'>
           {sections.map((s, i) => (
@@ -108,19 +91,14 @@ class Home extends React.Component {
       </div>
     )
   }
-}
 
-function clickFunction (section, component) {
-  const bounds = document.getElementsByClassName('section ' + section.short)[0].getBoundingClientRect()
-
-  window.scroll({
-    top: bounds.top,
-    behavior: 'smooth'
-  })
-
-  component.setState({
-    activeScroller: section.short
-  })
+  componentDidMount () {
+    fetch(about)
+      .then((res) => res.text())
+      .then((aboutContent) => this.setState({
+        aboutContent
+      }))
+  }
 }
 
 export default Home
