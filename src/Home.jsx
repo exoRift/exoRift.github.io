@@ -57,7 +57,7 @@ class Home extends React.Component {
 
             <div className='contact-container'>
               {contacts.map((c, i) => (
-                <a href={c.link} className={'contact ' + c.name} key={i}>
+                <a href={c.link} target='_blank' rel='noopener noreferrer' className={'contact ' + c.name} key={i}>
                   <div className='title'>
                     <img alt={c.name} src={c.icon}/>
                     <span>{c.name}</span>
@@ -98,6 +98,8 @@ class Home extends React.Component {
       .then((aboutContent) => this.setState({
         aboutContent
       }))
+
+    document.title = 'Rift Creations - Home'
   }
 }
 

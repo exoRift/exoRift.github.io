@@ -35,8 +35,8 @@
 .contact-container {
   margin: 3% auto 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr .5fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr) .5fr;
+  grid-template-rows: repeat(2, 1fr);
   row-gap: 5%;
   column-gap: 3%;
   padding: 0 25% 1%;
@@ -46,13 +46,12 @@
   padding: 2%;
   border-radius: 10px;
   background: rgba(0, 0, 0, .2);
-  font-size: 1.5rem;
+  font-size: 1.3vw;
   overflow: hidden;
 }
 .contact:hover {
   background: rgba(0, 0, 0, .4);
   transform: translateY(-6%);
-  text-decoration: none;
 }
 .contact img {
   width: 4vw;
@@ -61,7 +60,7 @@
 .contact .title {
   display: flex;
   margin-bottom: 1%;
-  font-size: 2rem;
+  font-size: 1.7vw;
 }
 
 .contact.DeviantArt {

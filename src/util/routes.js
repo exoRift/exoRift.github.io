@@ -10,8 +10,8 @@ const routes = [
     public: true
   },
   {
-    path: '/projects/:project',
-    exact: false,
+    path: '/projects',
+    exact: true,
     name: 'Projects',
     component: Projects,
     public: true

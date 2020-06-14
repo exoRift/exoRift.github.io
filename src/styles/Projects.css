@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+
+.proj-header {
+  margin-left: 2%;
+  font-family: 'Sigmar One';
+  font-style: italic;
+  border-bottom: 2px solid var(--offset-bg);
+}
+
+.project-container {
+  display: flex;
+  margin-bottom: 2%;
+}
+
+.project-container .column {
+  flex: 50%;
+}
+
+.project-container .project {
+  transition: .5s;
+  margin: 2% 1%;
+  padding: 3%;
+  background: var(--dark);
+  border-radius: 20px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+}
+.project-container[scrolled='true'] .project:hover {
+  transform: scale(1.01);
+  background: var(--blue);
+  clip-path: polygon(0 0, 95% 0, 100% 15%, 100% 100%, 100% 100%, 5% 100%, 0 85%, 0 0);
+}
+.project-container[scrolled='true'] .project:hover::before {
+  content: '';
+  position: absolute;
+  width: 10vw;
+  height: 150vh;
+  transform: translateY(-60%) rotate(45deg);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+  animation: move-shine .9s ease-out 0s 1 normal forwards;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.project[active='true'] {
+  filter: sepia(100%);
+  transform: scale(.9);
+}
+
+.project .name {
+  font-style: italic;
+}
+
+.project .data-container {
+  display: flex;
+  /* align-items: flex-start; */
+}
+
+.project .data-container img {
+  width: 30vw;
+  margin-right: 3%;
+}
+
+.project .stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.project .stat {
+  display: flex;
+}
+
+.project .stats .stat svg {
+  width: 2vw;
+  fill: var(--teal);
+  margin-right: .5em;
+}
+
+.project .links {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -5%;
+}
+
+.project .links .link {
+  transition: .3s;
+  display: block;
+  width: 2.9vw;
+  padding: 1%;
+  z-index: 1;
+}
+.project .links .link:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}
+.project .links .link img {
+  width: 2vw;
+}
+
+.project .links .link.repo {
+  background: var(--red);
+}
+.project .links .link.repo[alone='false'] {
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+  border-radius: 10px 0 0 10px;
+}
+.project .links .link.repo[alone='true'] {
+  border-radius: 10px;
+}
+.project .links .link.site {
+  background: var(--green);
+  margin-left: -.7%;
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+  border-radius: 0 10px 10px 0;
+}
+
+@keyframes move-shine {
+  from {
+    left: -10vw;
+    top: -10vh;
+  } to {
+    left: 100vw;
+    top: 100vh;
+  }
+}
