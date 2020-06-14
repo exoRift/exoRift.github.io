@@ -47,4 +47,4 @@ jobs:
           BRANCH: master
           FOLDER: build
           GIT_CONFIG_NAME: Site Deployer
-          COMMIT_MESSAGE: Update Site for version '${{ fromJson(steps.define_pkg.outputs.package).version }}'
+          COMMIT_MESSAGE: Update site for version '${{ fromJson(steps.define_pkg.outputs.package).version }}'
