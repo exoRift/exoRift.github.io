@@ -11,7 +11,7 @@ const routes = [
   },
   {
     path: '/projects',
-    exact: true,
+    exact: false,
     name: 'Projects',
     component: Projects,
     public: true
