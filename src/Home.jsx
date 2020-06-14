@@ -1,4 +1,7 @@
 import React from 'react'
+import {
+  Link
+} from 'react-router-dom'
 import Markdown from 'react-markdown'
 
 import Scroller from './util/Scroller.jsx'
@@ -27,9 +30,12 @@ class Home extends React.Component {
           <>
             <div className='featured'>
               {data.pinned.map((p, i) => (
-                <a className='card' href={'/projects#' + p} key={i}>
+                <Link className='card' to={{
+                  pathname: '/projects',
+                  hash: '#' + p
+                }} key={i}>
                   <img alt={p} src={`${data.cdn}/${data.user}/${p}/master/assets/Splash.png`}/>
-                </a>
+                </Link>
               ))}
             </div>
           </>
