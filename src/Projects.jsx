@@ -41,7 +41,6 @@ class Projects extends React.Component {
   }
 
   render () {
-    console.log(this.state)
     const projects = this.state.projects.reduce((a, p, i) => {
       if (p.fork || p.name.endsWith('.github.io')) return a
 
