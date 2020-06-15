@@ -41,60 +41,61 @@ class Projects extends React.Component {
   }
 
   render () {
-    const projects = this.state.projects.reduce((a, p, i) => {
-      if (p.fork || p.name.endsWith('.github.io')) return a
+    const mobile = window.innerWidth <= 900
 
-      const name = p.name.replace(nameRegex, (match, param) => (['-', '.', ' '].includes(match[0]) ? ' ' : '') + param.toUpperCase())
+    const projects = this.state.projects
+      .filter((p) => !p.fork && !p.name.endsWith('.github.io'))
+      .reduce((a, p, i) => {
+        const name = p.name.replace(nameRegex, (match, param) => (['-', '.', ' '].includes(match[0]) ? ' ' : '') + param.toUpperCase())
 
-      a[a[1].length < a[0].length ? 1 : 0].push((
-        <div className={'project ' + p.name} key={i}>
-          <h2 className='name'>{name}</h2>
+        a[i % a.length].push((
+          <div className={'project ' + p.name} key={i}>
+            <h2 className='name'>{name}</h2>
 
-          <h4 className='description'>{p.description}</h4>
+            <h4 className='description'>{p.description}</h4>
 
-          <div className='data-container'>
-            {p.banner_url ? (
-              <img alt='splash' src={p.banner_url}/>
-            ) : null}
+            <div className='data-container'>
+              {p.banner_url ? (
+                <img alt='splash' src={p.banner_url}/>
+              ) : null}
 
-            <div className='stats'>
-              {stats.map((s, i) => (
-                <div className={'stat ' + s.name} key={i}>
-                  <s.Icon/>
+              <div className='stats'>
+                {stats.map((s, i) => (
+                  <div className={'stat ' + s.name} key={i}>
+                    <s.Icon/>
 
-                  <span>{p[s.prop]}</span>
-                </div>
-              ))}
+                    <span>{p[s.prop]}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className='links'>
+              <a href={p.html_url} target='_blank' rel='noopener noreferrer' className='link repo' alone={p.homepage ? 'false' : 'true'}>
+                <img alt='repository' src={repo}/>
+              </a>
+              {p.homepage ? (
+                <a href={p.homepage} target='_blank' rel='noopener noreferrer' className='link site'>
+                  <img alt='website' src={globe}/>
+                </a>
+              ) : null}
             </div>
           </div>
+        ))
 
-          <div className='links'>
-            <a href={p.html_url} target='_blank' rel='noopener noreferrer' className='link repo' alone={p.homepage ? 'false' : 'true'}>
-              <img alt='repository' src={repo}/>
-            </a>
-            {p.homepage ? (
-              <a href={p.homepage} target='_blank' rel='noopener noreferrer' className='link site'>
-                <img alt='website' src={globe}/>
-              </a>
-            ) : null}
-          </div>
-        </div>
-      ))
-
-      return a
-    }, [[], []])
+        return a
+      }, mobile ? [[]] : [[], []])
 
     return (
       <>
         <h1 className='proj-header'>PROJECTS</h1>
 
         <div className='project-container' scrolled={this.props.location.hash ? 'false' : 'true'}>
-          <div className='column'>
-            {projects[0]}
-          </div>
-          <div className='column'>
-            {projects[1]}
-          </div>
+          {projects.map((p, i) => (
+            <div className='column' key={i}>
+              {p}
+            </div>
+          ))}
         </div>
       </>
     )

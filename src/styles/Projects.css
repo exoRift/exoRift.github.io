@@ -53,11 +53,9 @@
 
 .project .data-container {
   display: flex;
-  /* align-items: flex-start; */
 }
 
 .project .data-container img {
-  width: 30vw;
   margin-right: 3%;
 }
 
@@ -65,7 +63,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -74,21 +71,52 @@
 }
 
 .project .stats .stat svg {
-  width: 2vw;
   fill: var(--teal);
   margin-right: .5em;
+}
+
+@media screen and (min-width: 900px) {
+  .project .data-container img {
+    width: 30vw;
+  }
+
+  .project .stats {
+    font-size: 1.5vw;
+  }
+
+  .project .stats .stat svg {
+    width: 2vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  .project .data-container {
+    align-items: flex-start;
+  }
+
+  .project .data-container img {
+    width: 50vw;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .project .stats {
+    font-size: 5vw;
+  }
+
+  .project .stats .stat svg {
+    width: 6vw;
+  }
 }
 
 .project .links {
   display: flex;
   justify-content: flex-end;
-  margin-top: -5%;
+  margin-top: -4.5%;
 }
 
 .project .links .link {
   transition: .3s;
   display: block;
-  width: 2.9vw;
   padding: 1%;
   z-index: 1;
 }
@@ -97,7 +125,8 @@
   z-index: 2;
 }
 .project .links .link img {
-  width: 2vw;
+  width: 2.5em;
+  margin: auto;
 }
 
 .project .links .link.repo {
@@ -112,7 +141,7 @@
 }
 .project .links .link.site {
   background: var(--green);
-  margin-left: -.7%;
+  margin-left: -.4em;
   clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
   border-radius: 0 10px 10px 0;
 }

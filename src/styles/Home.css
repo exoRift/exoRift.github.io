@@ -19,7 +19,6 @@
 }
 .featured .card {
   transition: .3s;
-  height: 20vh;
   padding: 0 2%;
   box-shadow: -10px 10px 2px rgba(0, 0, 0, .3);
 }
@@ -39,8 +38,8 @@
   grid-template-rows: repeat(2, 1fr);
   row-gap: 5%;
   column-gap: 3%;
-  padding: 0 25% 1%;
 }
+
 .contact {
   transition: .3s;
   padding: 2%;
@@ -62,12 +61,47 @@
   margin-bottom: 1%;
   font-size: 1.7vw;
 }
+@media screen and (min-width: 900px) {
+  .contact-container {
+    padding: 0 25% 1%;
+  }
+
+  .contact {
+    font-size: 1.3vw;
+  }
+  .contact img {
+    width: 4vw;
+  }
+  .contact .title {
+    font-size: 1.7vw;
+  }
+
+  .contact.DeviantArt .title span {
+    transform: rotate(90deg) translate(12%, 73%);
+  }
+}
+@media screen and (max-width: 900px) {
+  .contact-container {
+    padding: 0 5% 1%;
+  }
+
+  .contact {
+    font-size: 3vw;
+  }
+  .contact img {
+    width: 10vw;
+  }
+  .contact .title {
+    font-size: 5vw;
+  }
+
+  .contact.DeviantArt .title span {
+    transform: rotate(90deg) translate(12%, 87%);
+  }
+}
 
 .contact.DeviantArt {
   grid-area: 1 / 3 / span 2 / 3;
   padding-top: 35%;
   padding-left: 5%;
-}
-.contact.DeviantArt .title span {
-  transform: rotate(90deg) translate(12%, 73%);
 }

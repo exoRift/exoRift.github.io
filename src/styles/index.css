@@ -56,16 +56,16 @@ a:hover {
 
 #navbar #header {
   transition: .4s;
-  font-size: 5rem;
+  font-size: 5vw;
   font-family: 'Alfa Slab One', 'Segoe UI';
   font-style: italic;
-  height: 130px;
+  height: 7vw;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 #navbar[scrolled='true'] #header {
   clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0);
-  height: 0px;
+  height: 0vw;
 }
 
 #navbar .nav-btn-container {
@@ -74,12 +74,12 @@ a:hover {
 }
 #navbar .nav-btn {
   transition: .5s;
-  width: 8%;
+  width: 5.5em;
   background: rgba(0, 0, 0, .5);
   border-radius: 10px;
-  margin: 0 .5%;
+  margin: 0 .5em;
   padding: .3%;
-  font-size: 1.5vw;
+  font-size: 1.9em;
   text-align: center;
 }
 #navbar .nav-btn:hover {
@@ -89,32 +89,40 @@ a:hover {
   background: rgba(0, 0, 0, .8);
 }
 
-#scroller {
-  transition: width .3s;
-  background: var(--offset-bg);
-  border-radius: 0 25px 25px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 6%;
+@media screen and (min-width: 900px) {
+  #scroller {
+    transition: width .3s;
+    background: var(--offset-bg);
+    border-radius: 0 25px 25px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 6%;
+  }
+  #scroller:hover {
+    width: 11%;
+  }
+  
+  #scroller .scroll {
+    background: rgba(0, 0, 0, .3);
+    margin: 10% 0;
+    padding-left: 2%;
+    font-size: 1.2vw;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+  #scroller .scroll:hover {
+    color: var(--green);
+  }
+  #scroller .scroll[active='true'] {
+    animation: clicked .3s ease-in-out 0s 2 alternate forwards;
+  }
 }
-#scroller:hover {
-  width: 11%;
-}
-
-#scroller .scroll {
-  background: rgba(0, 0, 0, .3);
-  margin: 10% 0;
-  padding-left: 2%;
-  font-size: 1.2vw;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
-#scroller .scroll:hover {
-  color: var(--green);
-}
-#scroller .scroll[active='true'] {
-  animation: clicked .3s ease-in-out 0s 2 alternate forwards;
+@media screen and (max-width: 900px) {
+  #scroller {
+    width: 0;
+    overflow: hidden;
+  }
 }
 
 #app {
