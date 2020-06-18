@@ -20,7 +20,7 @@ class Routes extends React.Component {
               key={index}
               path={route.path}
               exact={route.exact}
-              component={route.component}
+              component={route.Component}
             />
           ))}
         </div>

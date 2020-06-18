@@ -6,15 +6,13 @@ const routes = [
     path: '/',
     exact: true,
     name: 'Home',
-    component: Home,
-    public: true
+    Component: Home
   },
   {
     path: '/projects',
     exact: true,
     name: 'Projects',
-    component: Projects,
-    public: true
+    Component: Projects
   }
 ]
 

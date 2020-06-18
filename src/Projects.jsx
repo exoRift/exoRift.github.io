@@ -10,7 +10,7 @@ import { ReactComponent as fork } from './assets/icons/fork.svg'
 
 import data from './util/data.json'
 
-const nameRegex = /(?:^|[-. ])(.)/gm
+const nameRegex = /(?:^|[-. ])(.)?/gm
 
 const stats = [
   {
@@ -46,7 +46,9 @@ class Projects extends React.Component {
     const projects = this.state.projects
       .filter((p) => !p.fork && !p.name.endsWith('.github.io'))
       .reduce((a, p, i) => {
-        const name = p.name.replace(nameRegex, (match, param) => (['-', '.', ' '].includes(match[0]) ? ' ' : '') + param.toUpperCase())
+        const name = p.name
+          .replace('-jsdoc', '')
+          .replace(nameRegex, (match, param) => (['-', '.', ' '].includes(match[0]) ? ' ' : '') + param.toUpperCase())
 
         a[i % a.length].push((
           <div className={'project ' + p.name} key={i}>
