@@ -59,13 +59,13 @@ a:hover {
   font-size: 5vw;
   font-family: 'Alfa Slab One', 'Segoe UI';
   font-style: italic;
-  height: 7vw;
+  margin: 0%;
   overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 50%);
 }
 #navbar[scrolled='true'] #header {
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0);
-  height: 0vw;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 0, 100% 0);
+  margin: -4% 0;
 }
 
 #navbar .nav-btn-container {
