@@ -30,10 +30,10 @@ class Scroller extends React.Component {
 
   clickFunction (name) {
     const app = document.getElementById('app')
-    const bounds = document.getElementsByClassName(name)[0].getBoundingClientRect()
+    const element = document.getElementsByClassName(name)[0]
 
     app.scroll({
-      top: bounds.top - app.getBoundingClientRect().top,
+      top: element.offsetTop - app.getBoundingClientRect().top,
       behavior: 'smooth'
     })
 
