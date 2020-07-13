@@ -2,7 +2,7 @@
   "name": "rift-creations",
   "description": "A directory for all my projects and creations",
   "main": "src/index.js",
-  "version": "1.1.0",
+  "version": "1.0.2",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"
