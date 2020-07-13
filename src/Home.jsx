@@ -53,6 +53,25 @@ class Home extends React.Component {
           </>
         )
       },
+      // {
+      //   name: 'Prior Experience',
+      //   short: 'experience',
+      //   value: (
+      //     <>
+      //       <h1>Prior Experience</h1>
+      //     </>
+      //   )
+      // },
+      // {
+      //   name: 'Interests',
+      //   short: 'interests',
+      //   value: (
+      //     <>
+      //       <h1>Interests</h1>
+      //       <h6>Wage, fields, conditions</h6>
+      //     </>
+      //   )
+      // },
       {
         name: 'Contact',
         short: 'contacts',
