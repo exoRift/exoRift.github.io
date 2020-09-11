@@ -1,6 +1,6 @@
-Hello, my name is Arthur and I am 15 years old. I am an aspiring software engineer living in New York currently looking to expand my projects list to use on my resume/portfolio for future job applications.
+Hello, my name is Arthur and I am {{AGE}} years old. I am an aspiring software engineer living in New York currently looking to expand my projects list to use on my resume/portfolio for future job applications.
 
-I have been programming for over 5 years and have released several open-source projects for use in both consumer and development spaces.
+I have been programming for over {{CAREERLENGTH}} years and have released several open-source projects for use in both consumer and development spaces.
 
 I am interested in both web and game design, though my primary experience has been in web design.
 

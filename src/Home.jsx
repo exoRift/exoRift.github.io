@@ -12,6 +12,19 @@ import data from './util/data.json'
 import contacts from './util/contacts.json'
 import about from './assets/about.md'
 
+const birthday = new Date('9/06/2004')
+
+const mdVars = {
+  AGE: () => new Date().getFullYear() - birthday.getFullYear(),
+  CAREERLENGTH: () => mdVars.AGE() - 10
+}
+
+function inject (markdown) {
+  for (const variable in mdVars) markdown = markdown.replace(new RegExp(`{{${variable}}}`, 'g'), mdVars[variable]())
+
+  return markdown
+}
+
 class Home extends React.Component {
   constructor (props) {
     super(props)
@@ -49,7 +62,7 @@ class Home extends React.Component {
             <h1>About me</h1>
             <h6>Who am I?</h6>
 
-            <Markdown source={this.state.aboutContent}/>
+            <Markdown source={inject(this.state.aboutContent)}/>
           </>
         )
       },
@@ -78,7 +91,7 @@ class Home extends React.Component {
         value: (
           <>
             <h2>Contact</h2>
-            <h5>Currently not open for commissions or requests</h5>
+            <h5><i>Currently not open for commissions or requests</i></h5>
 
             <div className='contact-container'>
               {contacts.map((c, i) => (
