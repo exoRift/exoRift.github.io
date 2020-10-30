@@ -6,13 +6,14 @@ I am interested in both web and game design, though my primary experience has be
 
 ### Capabilities
 - Product design
-- Product code
+- Product software
 - Logo design
 - Banner design
-- Artwork
+- Basic graphic design
+- Video editing
 
 ### Experience
-- Web development
+- Web development (React)
 - Backend (APIs, Databases)
 - Frontend (HTML, CSS, JS, React)
 - Middleware (Database managers)
