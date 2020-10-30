@@ -7,7 +7,6 @@ import {
 import Navbar from './util/Navbar.jsx'
 
 import routes from './util/routes.js'
-import secretMessage from './util/secret-message.txt'
 
 class Routes extends React.Component {
   constructor (props) {
@@ -57,11 +56,11 @@ class Routes extends React.Component {
       this.codeProgress++
 
       if (this.codeProgress === this.code.length) {
-        fetch(secretMessage)
-          .then((res) => res.text())
-          .then(alert)
+        const navbar = document.getElementById('navbar')
 
-        this.codeProgress = 0
+        navbar.classList.add('spinning')
+
+        document.onkeydown = undefined
       }
     } else this.codeProgress = 0
   }
