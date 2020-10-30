@@ -44,6 +44,9 @@ a:hover {
 #navbar[scrolled='true'] {
   margin: 0;
 }
+#navbar.spinning #banner {
+  animation: spin 2s infinite linear;
+}
 
 #navbar #banner {
   transition: .5s;
@@ -162,5 +165,13 @@ a:hover {
     color: var(--green);
   } to {
     color: var(--offset-theme);
+  }
+}
+
+@keyframes spin {
+  from {
+    filter: hue-rotate(0deg);
+  } to {
+    filter: hue-rotate(359deg);
   }
 }
