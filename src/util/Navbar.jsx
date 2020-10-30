@@ -8,12 +8,12 @@ import splash from '../assets/Splash.png'
 
 import routes from './routes.js'
 
-function Navbar (props) {
+function Navbar () {
   const location = useLocation()
 
   return (
     <div id='navbar'>
-      <div id='banner' style={{ background: `url(${splash})` }}>
+      <div id='banner' style={{ 'background-image': `url(${splash})` }}>
         <p id='header'>Creations of the Rift</p>
 
         <div className='nav-btn-container'>

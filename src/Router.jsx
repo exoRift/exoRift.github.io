@@ -7,14 +7,11 @@ import {
 import Navbar from './util/Navbar.jsx'
 
 import routes from './util/routes.js'
+import secretMessage from './util/secret-message.txt'
 
 class Routes extends React.Component {
   constructor (props) {
     super(props)
-
-    this.state = {
-      mode: false
-    }
 
     this.code = [38, 38, 40, 40, 39, 37, 39, 37, 66, 65]
     this.codeProgress = 0
@@ -52,7 +49,7 @@ class Routes extends React.Component {
 
     navbar.setAttribute('scrolled', app.scrollTop > 10 ? 'true' : 'false')
 
-    if (scroller) scroller.style.marginTop = `${app.scrollTop}px`
+    if (scroller) scroller.style.paddingTop = `${app.scrollTop}px`
   }
 
   keyFunction (app, event) {
@@ -60,11 +57,11 @@ class Routes extends React.Component {
       this.codeProgress++
 
       if (this.codeProgress === this.code.length) {
-        this.setState({
-          mode: true
-        })
+        fetch(secretMessage)
+          .then((res) => res.text())
+          .then(alert)
 
-        document.onkeydown = undefined
+        this.codeProgress = 0
       }
     } else this.codeProgress = 0
   }
