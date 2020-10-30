@@ -12,7 +12,7 @@ class Routes extends React.Component {
   constructor (props) {
     super(props)
 
-    this.code = [38, 38, 40, 40, 39, 37, 39, 37, 66, 65]
+    this.code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
     this.codeProgress = 0
   }
 
