@@ -28,7 +28,14 @@
       "last 1 safari version"
     ]
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "web",
+    "website",
+    "nodejs",
+    "node",
+    "js"
+  ],
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
