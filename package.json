@@ -1,6 +1,6 @@
 {
   "name": "rift-creations",
-  "description": "A directory for all my projects and creations",
+  "description": "A personal website with my info, credibility, and accomplishments",
   "main": "src/index.js",
   "version": "1.0.4",
   "scripts": {
@@ -28,14 +28,7 @@
       "last 1 safari version"
     ]
   },
-  "keywords": [
-    "react",
-    "web",
-    "website",
-    "nodejs",
-    "node",
-    "js"
-  ],
+  "keywords": [],
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
