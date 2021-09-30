@@ -38,6 +38,8 @@ class Projects extends React.Component {
       projects: [],
       scrolled: false
     }
+
+    document.title = props.title + ' - Projects'
   }
 
   render () {
@@ -137,8 +139,6 @@ class Projects extends React.Component {
         if (container) container.setAttribute('scrolled', true)
       }, 1500)
     }
-
-    document.title = 'Rift Creations - Projects'
   }
 
   componentDidUpdate () {

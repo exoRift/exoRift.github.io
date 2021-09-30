@@ -27,7 +27,7 @@ class Routes extends React.Component {
               key={index}
               path={route.path}
               exact={route.exact}
-              component={route.Component}
+              render={(props) => <route.Component title={document.title} {...props}/>}
             />
           ))}
         </div>
@@ -38,8 +38,15 @@ class Routes extends React.Component {
   componentDidMount () {
     const app = document.getElementById('app')
 
-    app.onscroll = this.scrollFunction.bind(this, app)
-    document.onkeydown = this.keyFunction.bind(this, app)
+    app.addEventListener('scroll', this.scrollFunction.bind(this, app))
+    app.addEventListener('keydown', this.keyFunction.bind(this, app))
+  }
+
+  componentWillUnmount () {
+    const app = document.getElementById('app')
+
+    app.removeEventListener('scroll', this.scrollFunction)
+    app.removeEventListener('keydown', this.keyFunction)
   }
 
   scrollFunction (app) {
@@ -60,7 +67,7 @@ class Routes extends React.Component {
 
         navbar.classList.add('spinning')
 
-        document.onkeydown = undefined
+        document.removeEventListener('keydown', this.keyFunction)
       }
     } else this.codeProgress = 0
   }

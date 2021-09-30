@@ -32,6 +32,8 @@ class Home extends React.Component {
     this.state = {
       aboutContent: ''
     }
+
+    document.title = props.title + ' - Home'
   }
 
   render () {
@@ -136,8 +138,6 @@ class Home extends React.Component {
       .then((aboutContent) => this.setState({
         aboutContent
       }))
-
-    document.title = 'Rift Creations - Home'
   }
 }
 
