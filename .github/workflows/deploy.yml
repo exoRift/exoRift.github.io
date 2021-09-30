@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Cache Dependencies
         id: dep-cache
-        uses: actions/cache@v1.1.2
+        uses: actions/cache@v2.1.6
         env:
           cache-name: dep-cache
         with:
