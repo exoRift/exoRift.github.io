@@ -4,7 +4,7 @@ import {
   Route
 } from 'react-router-dom'
 
-import Navbar from './util/Navbar.jsx'
+import Navbar from './modules/Navbar.jsx'
 
 import routes from './util/routes.js'
 
@@ -19,7 +19,7 @@ class Routes extends React.Component {
   render () {
     return (
       <Router>
-        <Navbar/>
+        <Navbar routes={routes}/>
 
         <div id='app'>
           {routes.map((route, index) => (
@@ -39,14 +39,14 @@ class Routes extends React.Component {
     const app = document.getElementById('app')
 
     app.addEventListener('scroll', this.scrollFunction.bind(this, app))
-    app.addEventListener('keydown', this.keyFunction.bind(this, app))
+    document.addEventListener('keydown', this.keyFunction.bind(this, app))
   }
 
   componentWillUnmount () {
     const app = document.getElementById('app')
 
     app.removeEventListener('scroll', this.scrollFunction)
-    app.removeEventListener('keydown', this.keyFunction)
+    document.removeEventListener('keydown', this.keyFunction)
   }
 
   scrollFunction (app) {
@@ -65,7 +65,7 @@ class Routes extends React.Component {
       if (this.codeProgress === this.code.length) {
         const navbar = document.getElementById('navbar')
 
-        navbar.classList.add('spinning')
+        navbar.classList.add('cycling')
 
         document.removeEventListener('keydown', this.keyFunction)
       }

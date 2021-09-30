@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom'
 import Markdown from 'react-markdown'
 
-import Scroller from './util/Scroller.jsx'
+import Scroller from './modules/Scroller.jsx'
 
 import './styles/Home.css'
 
