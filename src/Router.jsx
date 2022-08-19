@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
+  Routes,
   Route
 } from 'react-router-dom'
 
@@ -8,69 +9,59 @@ import Navbar from './modules/Navbar.jsx'
 
 import routes from './util/routes.js'
 
-class Routes extends React.Component {
+class Router extends React.Component {
+  static title = 'Rift Creations'
+
+  static code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+
+  codeProgress = 0
+
   constructor (props) {
     super(props)
 
-    this.code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
-    this.codeProgress = 0
+    this.keyDown = this.keyDown.bind(this)
+  }
+
+  componentDidMount () {
+    document.addEventListener('keydown', this.keyDown)
+  }
+
+  componentWillUnmount () {
+    document.removeEventListener('keydown', this.keyDown)
   }
 
   render () {
     return (
-      <Router>
+      <BrowserRouter>
         <Navbar routes={routes}/>
 
         <div id='app'>
-          {routes.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              exact={route.exact}
-              render={(props) => <route.Component title={document.title} {...props}/>}
-            />
-          ))}
+          <Routes>
+            {routes.map((route, index) => (
+              <Route
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                element={<route.Component title={Router.title}/>}
+              />
+            ))}
+
+            {/* <Route path='*' title={Router.title}/>}/> */}
+          </Routes>
         </div>
-      </Router>
+      </BrowserRouter>
     )
   }
 
-  componentDidMount () {
-    const app = document.getElementById('app')
-
-    app.addEventListener('scroll', this.scrollFunction.bind(this, app))
-    document.addEventListener('keydown', this.keyFunction.bind(this, app))
-  }
-
-  componentWillUnmount () {
-    const app = document.getElementById('app')
-
-    app.removeEventListener('scroll', this.scrollFunction)
-    document.removeEventListener('keydown', this.keyFunction)
-  }
-
-  scrollFunction (app) {
-    const navbar = document.getElementById('navbar')
-    const scroller = document.getElementById('scroller')
-
-    navbar.setAttribute('scrolled', app.scrollTop > 10 ? 'true' : 'false')
-
-    if (scroller) scroller.style.paddingTop = `${app.scrollTop}px`
-  }
-
-  keyFunction (app, event) {
-    if (this.code[this.codeProgress] === event.keyCode) {
+  keyDown (e) {
+    if (Router.code[this.codeProgress] === e.keyCode) {
       this.codeProgress++
 
-      if (this.codeProgress === this.code.length) {
-        const navbar = document.getElementById('navbar')
-
-        navbar.classList.add('cycling')
-
-        document.removeEventListener('keydown', this.keyFunction)
+      if (this.codeProgress === Router.code.length) {
+        document.removeEventListener('keydown', this.keyDown)
       }
     } else this.codeProgress = 0
   }
 }
 
-export default Routes
+export default Router

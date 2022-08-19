@@ -1,107 +1,72 @@
-.homepage {
-  display: flex;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-.section-container {
-  width: 100%;
-}
-
-.section {
-  background: rgba(0, 0, 0, .2);
-  border-radius: 20px;
-  margin: 0 .5% 1%;
+.page.home .section {
+  margin: 0 0.5% 1%;
   padding: 1%;
-}
-
-.featured {
-  display: flex;
-  justify-content: space-evenly;
-}
-.featured .card {
-  transition: .3s;
-  padding: 0 2%;
-  box-shadow: -10px 10px 2px rgba(0, 0, 0, .3);
-}
-.featured .card:hover {
-  transform: translate(7px, -7px);
-  box-shadow: -15px 15px 2px rgba(0, 0, 0, .3);
-}
-.featured .card img {
-  width: 20vw;
-  margin: auto 0;
-}
-
-.contact-container {
-  margin: 3% auto 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr) .5fr;
-  grid-template-rows: repeat(2, 1fr);
-  row-gap: 5%;
-  column-gap: 3%;
-}
-
-.contact {
-  transition: .3s;
-  padding: 2%;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, .2);
-  font-size: 1.3vw;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
   overflow: hidden;
 }
-.contact:hover {
-  background: rgba(0, 0, 0, .4);
-  transform: translateY(-6%);
+
+.page.home .subsection {
+  position: relative;
 }
-.contact img {
-  width: 4vw;
+
+.page.home .subsection *:not(.gallery) {
+  transition: 1s opacity;
+  opacity: 0;
+}
+.page.home .subsection::before {
+  content: '';
+  transition: 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--reveal-color);
+  border-radius: 5px;
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 1;
+}
+
+.page.home .subsection .gallery * {
+  transition: 0.4s, 1s opacity;
+}
+
+.page.home .subsection .gallery.icon {
+  width: 50px;
+}
+
+.page.home .subsection.visible * {
+  opacity: 1;
+}
+.page.home .subsection.visible::before {
+  opacity: 0.4;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 5%);
+  z-index: -1;
+}
+
+.page.home .subsection h1 {
+  margin-left: 1%;
   margin-right: 5%;
-}
-.contact .title {
-  display: flex;
-  margin-bottom: 1%;
-  font-size: 1.7vw;
-}
-@media screen and (min-width: 900px) {
-  .contact-container {
-    padding: 0 25% 1%;
-  }
-
-  .contact {
-    font-size: 1.3vw;
-  }
-  .contact img {
-    width: 4vw;
-  }
-  .contact .title {
-    font-size: 1.7vw;
-  }
-
-  .contact.DeviantArt .title span {
-    transform: rotate(90deg) translate(12%, 73%);
-  }
-}
-@media screen and (max-width: 900px) {
-  .contact-container {
-    padding: 0 5% 1%;
-  }
-
-  .contact {
-    font-size: 3vw;
-  }
-  .contact img {
-    width: 10vw;
-  }
-  .contact .title {
-    font-size: 5vw;
-  }
-
-  .contact.DeviantArt .title span {
-    transform: rotate(90deg) translate(12%, 87%);
-  }
+  padding-left: 1%;
+  border-bottom: 1px solid var(--dark);
+  font-family: 'Bebas Neue', cursive;
+  font-style: italic;
 }
 
-.contact.DeviantArt {
-  grid-area: 1 / 3 / span 2 / 3;
-  padding-top: 35%;
-  padding-left: 5%;
+.page.home .subsection h3 {
+  margin-left: 0.5%;
+  text-decoration: underline;
+}
+
+.page.home .subsection p {
+  padding-left: 1%;
+  font-size: 1.5rem;
+}
+.page.home .subsection ul {
+  padding-left: 4%;
+  font-size: 1.2rem;
 }

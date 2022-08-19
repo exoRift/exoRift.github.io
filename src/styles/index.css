@@ -1,45 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0');
+
 :root {
-  --offset-bg: #23272A;
-  --offset-theme: #007053;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap');
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.wip {
-  font-family: 'Karla', sans-serif;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-a:hover {
-  text-decoration: none !important;
+  --nav-background-gradient: radial-gradient(
+    circle at 100% 0%,
+    hsl(49deg 100% 69%) 0%,
+    hsl(39deg 100% 66%) 2%,
+    hsl(31deg 96% 64%) 4%,
+    hsl(22deg 87% 62%) 6%,
+    hsl(12deg 76% 60%) 8%,
+    hsl(360deg 61% 57%) 11%,
+    hsl(347deg 57% 48%) 14%,
+    hsl(334deg 73% 38%) 18%,
+    hsl(322deg 100% 27%) 23%,
+    hsl(310deg 100% 20%) 29%,
+    hsl(289deg 100% 16%) 40%,
+    hsl(259deg 100% 15%) 55%,
+    hsl(227deg 100% 18%) 65%,
+    hsl(220deg 100% 21%) 72%,
+    hsl(215deg 100% 24%) 77%,
+    hsl(210deg 100% 26%) 81%,
+    hsl(206deg 100% 27%) 85%,
+    hsl(202deg 100% 29%) 88%,
+    hsl(198deg 100% 30%) 91%,
+    hsl(194deg 100% 31%) 94%,
+    hsl(190deg 100% 31%) 96%,
+    hsl(186deg 100% 32%) 98%,
+    hsl(183deg 79% 36%) 100%
+  );
 }
 
 #root {
-  height: 100vh;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 #app {
-  flex: 1 1 auto;
-  overflow: auto;
+  flex: 1;
+  padding-top: 0.5%;
+}
+
+li {
+  list-style: square;
 }
 
 *::-webkit-scrollbar {
-  width: 1em;
+  width: 1rem;
 }
 
 *::-webkit-scrollbar-track {
@@ -49,30 +55,14 @@ a:hover {
 }
 
 *::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 10px 10px var(--info);
+  box-shadow: inset 0 0 10px 10px var(--primary);
   border: solid 5px transparent;
   border-radius: 10px;
 }
 *::-webkit-scrollbar-thumb:hover {
-  box-shadow: inset 0 0 10px 10px var(--warning);
+  box-shadow: inset 0 0 10px 10px var(--info);
 }
 
 *::-webkit-scrollbar-corner {
   opacity: 0;
-}
-
-@keyframes clicked {
-  from {
-    color: var(--green);
-  } to {
-    color: var(--offset-theme);
-  }
-}
-
-@keyframes spin {
-  from {
-    filter: hue-rotate(0deg);
-  } to {
-    filter: hue-rotate(359deg);
-  }
 }

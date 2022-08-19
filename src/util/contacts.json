@@ -1,31 +1,26 @@
 [
   {
     "name": "Email",
-    "value": "arthurbneuman@gmail.com",
-    "link": "mailto:arthurbneuman@gmail.com",
-    "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png"
+    "link": "mailto:arthurbneuman@outlook.com",
+    "icon": "https://raw.githubusercontent.com/gilbarbara/logos/master/logos/google-gmail.svg"
   },
   {
     "name": "Discord",
-    "value": "exoRift#9275",
     "link": "https://discord.gg/DjYykuz",
-    "icon": "https://freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png"
+    "icon": "https://raw.githubusercontent.com/gilbarbara/logos/master/logos/discord-icon.svg"
   },
   {
     "name": "Github",
-    "value": "exoRift",
     "link": "https://github.com/exoRift",
-    "icon": "https://image.flaticon.com/icons/svg/25/25231.svg"
+    "icon": "https://raw.githubusercontent.com/gilbarbara/logos/master/logos/github-icon.svg"
   },
   {
     "name": "Twitter",
-    "value": "xoRift",
     "link": "https://twitter.com/xoRift",
-    "icon": "https://3.bp.blogspot.com/-NxouMmz2bOY/T8_ac97cesI/AAAAAAAAGg0/e3vY1_bdnbE/s1600/Twitter+logo+2012.png"
+    "icon": "https://raw.githubusercontent.com/gilbarbara/logos/master/logos/twitter.svg"
   },
   {
     "name": "DeviantArt",
-    "value": "exoRift",
     "link": "https://deviantart.com/exorift",
     "icon": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/281fb36e-8f3c-4fd2-9c83-1146281395c4/d8vzqbo-a1a03cab-ccca-4efc-8a80-4193bb76af9a.png/v1/fill/w_668,h_1101,strp/deviantart_logo_by_cr8gr8_designs_d8vzqbo-fullview.png"
   }

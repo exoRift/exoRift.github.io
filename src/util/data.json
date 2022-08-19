@@ -1,10 +1,18 @@
 {
-  "endpoint": "https://api.github.com",
-  "cdn": "https://raw.githubusercontent.com",
-  "user": "exoRift",
-  "pinned": [
-    "cyclone-engine",
-    "telex",
-    "RFID-S"
-  ]
+  "api": {
+    "endpoint": "https://api.github.com",
+    "cdn": "https://raw.githubusercontent.com",
+    "user": "exoRift"
+  },
+  "projects": {
+    "pinned": [
+      "react-fluent-mobile",
+      "cyclone-engine",
+      "telex",
+      "RFID-S"
+    ]
+  },
+  "personal": {
+    "birthday": "9/6/2004"
+  }
 }

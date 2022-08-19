@@ -1,0 +1,31 @@
+.gallery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: var(--width);
+  margin: 1rem var(--radius);
+  transform-style: preserve-3d;
+  animation: slide 30s linear infinite;
+}
+
+.gallery > * {
+  transition: 0.4s;
+  margin-right: -100%;
+  width: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--n) * (360deg / var(--count)))) translateZ(var(--radius));
+  border-radius: 10px;
+}
+.gallery > *:hover {
+  transform: rotateY(calc(var(--n) * (360deg / var(--count)))) translateZ(calc(var(--radius) * 1.1)) scale(1.1);
+}
+
+@keyframes slide {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}

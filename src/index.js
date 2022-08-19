@@ -1,9 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-
-import Router from './Router.jsx'
+import ReactDOM from 'react-dom/client'
 
 import './styles/bootstrap.min.css'
 import './styles/index.css'
 
-ReactDOM.render(<Router/>, document.getElementById('root'))
+import Router from './Router.jsx'
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<Router/>)

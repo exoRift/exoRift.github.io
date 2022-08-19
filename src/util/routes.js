@@ -1,6 +1,4 @@
 import Home from '../Home.jsx'
-import Projects from '../Projects.jsx'
-import Credibility from '../Credibility.jsx'
 
 const routes = [
   {
@@ -10,16 +8,9 @@ const routes = [
     Component: Home
   },
   {
-    path: '/cred',
-    exact: true,
-    name: 'Credibility',
-    Component: Credibility
-  },
-  {
-    path: '/projects',
-    exact: true,
-    name: 'Projects',
-    Component: Projects
+    path: '/showcase',
+    name: 'Portfolio',
+    Component: Home
   }
 ]
 
