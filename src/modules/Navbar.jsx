@@ -37,7 +37,7 @@ class Navbar extends React.Component {
         <div className='locations'>
           {contacts.map((c, i) => (
             <a className={'location ' + c.name.toLowerCase()} key={i} href={c.link} target='_blank' rel='noreferrer' title={c.name}>
-              <img src={c.icon} alt={c.name}/>
+              <img src={c.icon} alt={c.name} title={c.name}/>
             </a>
           ))}
         </div>

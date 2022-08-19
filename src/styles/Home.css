@@ -5,7 +5,6 @@
   padding: 1%;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  overflow: hidden;
 }
 
 .page.home .subsection {
@@ -29,6 +28,31 @@
   opacity: 1;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 1;
+}
+
+.page.home .pins {
+  display: flex;
+  justify-content: center;
+}
+
+.page.home .pin {
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  flex: 1 1;
+  margin: 0 1%;
+  padding: 1%;
+  background: #303030;
+  border-radius: 10px;
+  box-shadow: -1vw 1vw 2px rgba(0, 0, 0, 0.3);
+}
+.page.home .pin img {
+  width: 100%;
+  border-radius: 10px;
+}
+.page.home .pin:hover {
+  transform: translate(0.2vw, -0.2vw);
+  box-shadow: -1.6vw 1.6vw 2px rgba(0, 0, 0, 0.4);
 }
 
 .page.home .subsection .gallery * {

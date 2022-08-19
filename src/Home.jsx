@@ -45,6 +45,21 @@ class Home extends React.Component {
   render () {
     return (
       <div className='page home'>
+        <div className='section pinned' id='pinned'>
+          <div className='pins'>
+            {data.projects.pinned.map((p, i) => (
+              <a className='pin' key={i} href={`https://github.com/${data.api.user}/${p}`} target='_blank' rel='noreferrer'>
+                <img // TEMP: Until banner convention is changed
+                src={p === 'cyclone-engine'
+                  ? cycloneBanner
+                  : `${data.api.cdn}/${data.api.user}/${p}/master/assets/banner.png`}
+                alt={p}
+                onError={(e) => { e.target.src = `${data.api.cdn}/${data.api.user}/${p}/master/assets/Splash.png` }}/>
+              </a>
+            ))}
+          </div>
+        </div>
+
         <div className='section about'>
           <div className='subsection' id='me'>
             <h1>Who are you?</h1>
