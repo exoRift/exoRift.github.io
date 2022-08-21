@@ -16,7 +16,7 @@ class Home extends React.Component {
     (entries) => {
       for (const entry of entries) entry.target.classList.toggle('visible', entry.isIntersecting)
     },
-    { threshold: [0.5] }
+    { threshold: [window.innerWidth / (1920 * 2)] }
   )
 
   static birthday = new Date(data.personal.birthday)
