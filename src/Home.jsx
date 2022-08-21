@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Gallery from './modules/Gallery.jsx'
-import ProjectPane from './modules/ProjectPane.jsx'
 
 import profileBanner from './assets/profile_banner.png'
 // TEMP

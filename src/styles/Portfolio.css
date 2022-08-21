@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+.page.portfolio .section h1 {
+  margin-left: 0.2%;
+  margin-right: 5%;
+  padding-left: 0.5%;
+  border-bottom: 1px solid var(--dark);
+  font-family: 'Roboto Condensed', sans-serif;
+}

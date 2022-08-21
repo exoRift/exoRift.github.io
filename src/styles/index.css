@@ -40,6 +40,13 @@
   padding-top: 0.5%;
 }
 
+.section {
+  margin: 0 0.5% 1%;
+  padding: 1%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
 li {
   list-style: square;
 }

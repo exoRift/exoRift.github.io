@@ -1,4 +1,5 @@
 import Home from '../Home.jsx'
+import Portfolio from '../Portfolio.jsx'
 
 const routes = [
   {
@@ -10,7 +11,7 @@ const routes = [
   {
     path: '/showcase',
     name: 'Portfolio',
-    Component: Home
+    Component: Portfolio
   }
 ]
 

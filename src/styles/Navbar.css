@@ -80,6 +80,7 @@
 }
 
 #navbar .locations .location {
+  transition: 0.5s ease-out, transform 0.2s ease-out;
   width: 100%;
   height: 100%;
   margin: auto;
@@ -94,7 +95,7 @@
 }
 #navbar .locations .location:hover {
   background: rgba(0, 0, 0, 0.8);
-  transform: translateY(-0.4vw);
+  transform: translateY(-0.3vw);
 }
 
 #navbar .locations .location img {
