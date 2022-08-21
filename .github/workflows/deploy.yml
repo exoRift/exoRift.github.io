@@ -8,8 +8,8 @@ jobs:
     name: Build and Deploy site
 
     environment:
-    name: github-pages
-    url: ${{ steps.deploy.outputs.page_url }}
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
 
     strategy:
       matrix:
