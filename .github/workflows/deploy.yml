@@ -40,7 +40,6 @@ jobs:
         uses: actions/configure-pages@v1
       - name: Install Dependencies
         run: npm ci
-        if: steps.setup.outputs.cache-hit != true
       - name: Build Resources
         run: npm run build
       - name: Upload Static Artifact

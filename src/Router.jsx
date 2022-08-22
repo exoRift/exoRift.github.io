@@ -4,6 +4,9 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
+import {
+  FluentSelectionMixin
+} from 'react-fluent-mobile'
 
 import Navbar from './modules/Navbar.jsx'
 
@@ -48,6 +51,8 @@ class Router extends React.Component {
 
             {/* <Route path='*' title={Router.title}/>}/> */}
           </Routes>
+
+          <FluentSelectionMixin theme='light'/>
         </div>
       </BrowserRouter>
     )
