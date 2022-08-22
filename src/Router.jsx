@@ -8,6 +8,8 @@ import {
   FluentSelectionMixin
 } from 'react-fluent-mobile'
 
+import NotFound from './NotFound.jsx'
+
 import Navbar from './modules/Navbar.jsx'
 
 import routes from './util/routes.js'
@@ -49,7 +51,7 @@ class Router extends React.Component {
               />
             ))}
 
-            {/* <Route path='*' title={Router.title}/>}/> */}
+            <Route path='*' element={<NotFound onError={this.onError} title={Router.title}/>}/>
           </Routes>
 
           <FluentSelectionMixin theme='light'/>

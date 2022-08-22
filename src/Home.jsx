@@ -130,7 +130,11 @@ class Home extends React.Component {
               <li>Product design</li>
             </ul>
 
-            <p>In terms of designing product logos and banners, I enjoy making and rendering them in-browser via HTML & CSS</p>
+            <p>Niche Skills</p>
+
+            <ul>
+              <li>Making banners and logos in HTML & CSS rendered in-browser</li>
+            </ul>
 
             <Gallery>
               <img src={`${data.api.cdn}/${data.api.user}/react-fluent-mobile/master/assets/banner.png`} alt='fluent-mobile'/>
