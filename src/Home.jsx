@@ -113,7 +113,7 @@ class Home extends React.Component {
               <img src={data.api.cdn + '/gilbarbara/logos/master/logos/react.svg'} alt='react'/>
               <img src={data.api.cdn + '/gilbarbara/logos/master/logos/eslint.svg'} alt='eslint'/>
               <img src={data.api.cdn + '/gilbarbara/logos/master/logos/ava.svg'} alt='ava'/>
-              <img src={data.api.cdn + '/gilbarbara/logos/master/logos/codeclimate-logo.svg'} alt='codeclimate'/>
+              <img src={data.api.cdn + '/gilbarbara/logos/master/logos/codeclimate-icon.svg'} alt='codeclimate'/>
               <img src={data.api.cdn + '/gilbarbara/logos/master/logos/codecov-icon.svg'} alt='codecov'/>
               <img src={data.api.cdn + '/gilbarbara/logos/master/logos/github-actions.svg'} alt='actions'/>
               <img src={data.api.cdn + '/gilbarbara/logos/master/logos/circleci.svg'} alt='circleci'/>
