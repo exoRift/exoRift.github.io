@@ -43,11 +43,11 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  gap: 2%;
   font-size: 2rem;
 }
 
 #navbar .core .nav-links .nav-btn {
-  margin: 0 1%;
   padding: 0.5% 2.5%;
   color: var(--indigo);
   background: rgba(0, 0, 0, 0.5);
@@ -67,8 +67,8 @@
   color: var(--yellow);
 }
 
-#navbar.stuck .core .nav-links .nav-btn {
-  margin: 0 4%;
+#navbar.stuck .core .nav-links {
+  gap: 8%;
 }
 
 #navbar .locations {
