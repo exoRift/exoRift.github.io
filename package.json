@@ -1,7 +1,6 @@
 {
   "name": "rift-creations",
   "description": "A personal website with my information, credibility, and accomplishments",
-  "main": "src/index.js",
   "version": "2.1.0",
   "scripts": {
     "dev": "vite dev",
@@ -43,8 +42,6 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.14.0",
